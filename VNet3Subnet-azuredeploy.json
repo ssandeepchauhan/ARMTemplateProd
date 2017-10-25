@@ -1,0 +1,66 @@
+{
+
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vnetName": {
+      "type": "string"
+    },
+    "vnetAddressPrefix": {
+      "type": "string"
+    },
+   "subnet1Prefix": {
+      "type": "string"
+    },
+    "subnet1Name": {
+      "type": "string"
+    },
+    "subnet2Prefix": {
+      "type": "string"
+    },
+    "subnet2Name": {
+      "type": "string"
+    },
+    "subnet3Prefix": {
+      "type": "string"
+    },
+    "subnet3Name": {
+      "type": "string"
+    }
+  },
+  "variables": { },
+  "resources": [
+    {
+      "apiVersion": "2016-09-01",
+      "type": "Microsoft.Network/virtualNetworks",
+      "name": "[parameters('vnetName')]",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [ "[parameters('vnetAddressPrefix')]" ]
+        },
+        "subnets": [
+          {
+            "name": "[parameters('subnet1Name')]",
+            "properties": {
+              "addressPrefix": "[parameters('subnet1Prefix')]"
+            }
+          },
+          {
+            "name": "[parameters('subnet2Name')]",
+            "properties": {
+              "addressPrefix": "[parameters('subnet2Prefix')]"
+            }
+          },
+          {
+            "name": "[parameters('subnet3Name')]",
+            "properties": {
+              "addressPrefix": "[parameters('subnet3Prefix')]"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+
