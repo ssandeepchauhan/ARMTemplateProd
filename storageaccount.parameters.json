@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0", 
    "parameters": {
       "storageaccountname": {
-          "value": "armtemplateProd1"
+          "value": "armtemplateprod2"
           },
        "storageAccountType": {
            "value": "Standard_GRS"
