@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0", 
    "parameters": {
       "storageaccountname": {
-          "value": "nestlepocsa31x"
+          "value": "armtemplateProd"
           },
        "storageAccountType": {
            "value": "Standard_GRS"
