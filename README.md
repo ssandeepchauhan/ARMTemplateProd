@@ -1,2 +1,2 @@
-# NestleARMTemplate
+# ProdARMTemplate
 Prod Template
