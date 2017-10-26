@@ -50,8 +50,8 @@
     }
   },
   "variables": {
-    "nic1": "[concat('nic1',uniqueString(resourceGroup().id))]",
-    "nic2": "[concat('nic2',uniqueString(resourceGroup().id))]",
+    "nic1": "nic2011",
+    "nic2": "nic2022",
     "nicName": "[parameters('nicName')]",
     "publicIPAddressName": "[parameters('publicIPAddressName')]",
     "storageAccountName": "[parameters('storageaccountname')]",
@@ -69,6 +69,11 @@
       "type": "Microsoft.Compute/virtualMachines",
       "name": "[variables('vmName')]",
       "location": "[resourceGroup().location]",
+       "dependsOn": [
+ 	"[variables('nic1')]",
+ 	"[variables('nic2')]",
+ 	"[variables('publicIPAddressName')]"
+ 	],
       "properties": {
         "hardwareProfile": {
           "vmSize": "[parameters('virtualMachineSize')]"
